@@ -4,9 +4,10 @@ import Router from "./Router";
 
 function App() {
   return (
-    <GlobalStyle>
+    <React.Fragment>
+      <GlobalStyle />
       <Router />
-    </GlobalStyle>
+    </React.Fragment>
   );
 }
 
