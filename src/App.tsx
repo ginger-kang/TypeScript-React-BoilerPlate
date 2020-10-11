@@ -8,9 +8,11 @@ import { useDarkMode } from './hooks/useDarkMode';
 import DarkModeToggle from './components/DarkModeToggle';
 
 function App() {
-  const [theme, themeToggler] = useDarkMode();
+  const [theme, themeToggler, mountedComponent] = useDarkMode();
+
   const themeMode = theme === 'light' ? lightTheme : darkTheme;
 
+  if (!mountedComponent) return <div />;
   return (
     <ThemeProvider theme={themeMode}>
       <>
