@@ -1,22 +1,11 @@
-import { DefaultTheme } from 'styled-components';
-
-declare module 'styled-components' {
-  export interface DefaultTheme {
-    body: string;
-    text: string;
-    toggleBorder: string;
-    background: string;
-  }
-}
-
-export const lightTheme: DefaultTheme = {
+export const lightTheme = {
   body: '#fcfcfc',
   text: '#363537',
   toggleBorder: '#fcfcfc',
   background: '#363537',
 };
 
-export const darkTheme: DefaultTheme = {
+export const darkTheme = {
   body: '#363537',
   text: '#fafafa',
   toggleBorder: '#6B8096',

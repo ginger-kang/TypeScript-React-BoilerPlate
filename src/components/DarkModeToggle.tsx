@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { ReactElement, useContext } from 'react';
 import styled from 'styled-components';
+import { ThemeContext } from '../App';
 
 const Button = styled.button`
   background: ${({ theme }) => theme.background};
@@ -12,8 +13,10 @@ const Button = styled.button`
   }
 `;
 
-const DarkModeToggle = ({ theme, toggleTheme }: any) => {
-  return <Button onClick={toggleTheme}>Switch Theme</Button>;
-};
+export default function DarkModeToggle(): ReactElement {
+  const { theme, toggleTheme } = useContext(ThemeContext);
 
-export default DarkModeToggle;
+  return (
+    <Button onClick={toggleTheme}>{theme === 'light' ? '🌞' : '🌚'}</Button>
+  );
+}

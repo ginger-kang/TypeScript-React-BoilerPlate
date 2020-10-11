@@ -1,14 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
+import DarkModeToggle from '../components/DarkModeToggle';
 
 const HomeContainer = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: tomato;
 `;
 
 export default function Home() {
-  return <HomeContainer>Hello</HomeContainer>;
+  return (
+    <HomeContainer>
+      <DarkModeToggle />
+      React Bolierplate with TypeScript
+    </HomeContainer>
+  );
 }
