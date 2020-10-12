@@ -2,12 +2,11 @@ import React, { createContext } from 'react';
 import Router from './Router';
 
 import { GlobalStyle } from './global-styles';
-import { lightTheme, darkTheme } from './theme';
+import { lightTheme, darkTheme, Theme } from './theme';
 import { useDarkMode } from './hooks/useDarkMode';
-import { DefaultTheme } from 'styled-components';
 
 interface ContextProps {
-  theme: DefaultTheme;
+  theme: Theme;
   toggleTheme: () => void;
 }
 

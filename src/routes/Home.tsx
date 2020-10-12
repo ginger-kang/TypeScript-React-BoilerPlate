@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import DarkModeToggle from '../components/DarkModeToggle';
+import Navigation from '../components/Navigation';
 
 const HomeContainer = styled.div`
   width: 100%;
@@ -13,8 +14,8 @@ const HomeContainer = styled.div`
 export default function Home() {
   return (
     <HomeContainer>
+      <Navigation />
       <DarkModeToggle />
-      React Bolierplate with TypeScript
     </HomeContainer>
   );
 }

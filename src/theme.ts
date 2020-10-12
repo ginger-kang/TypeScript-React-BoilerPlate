@@ -15,3 +15,5 @@ export const darkTheme = {
   mainColor: '#e6328d',
   navBar: '#303030',
 };
+
+export type Theme = typeof lightTheme;
