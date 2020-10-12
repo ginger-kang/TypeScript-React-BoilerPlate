@@ -4,14 +4,15 @@ import Router from './Router';
 import { GlobalStyle } from './global-styles';
 import { lightTheme, darkTheme } from './theme';
 import { useDarkMode } from './hooks/useDarkMode';
+import { DefaultTheme } from 'styled-components';
 
 interface ContextProps {
-  theme: string;
+  theme: DefaultTheme;
   toggleTheme: () => void;
 }
 
 export const ThemeContext = createContext<ContextProps>({
-  theme: 'light',
+  theme: lightTheme,
   toggleTheme: () => {
     return null;
   },
@@ -23,7 +24,7 @@ export default function App() {
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
       <>
-        <GlobalStyle theme={theme === 'light' ? lightTheme : darkTheme} />
+        <GlobalStyle theme={theme === lightTheme ? lightTheme : darkTheme} />
         <Router />
       </>
     </ThemeContext.Provider>

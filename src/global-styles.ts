@@ -6,7 +6,9 @@ interface ThemeInterface {
     body: string;
     text: string;
     toggleBorder: string;
-    background: string;
+    toggleBackground: string;
+    mainColor: string;
+    navBar: string;
   };
 }
 
@@ -22,7 +24,8 @@ export const GlobalStyle = createGlobalStyle<ThemeInterface>`
         color: ${({ theme }) => theme.text};
         transition: all 0.5s ease-in-out;
     }
-    button { 
+    button {
+        background: ${({ theme }) => theme.toggleBackground};
         cursor: pointer;
         border: none;
         outline: none;
