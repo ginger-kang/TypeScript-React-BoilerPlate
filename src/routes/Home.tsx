@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import DarkModeToggle from '../components/DarkModeToggle';
+import Main from '../components/Main';
 import Navigation from '../components/Navigation';
 
 const HomeContainer = styled.div`
@@ -16,6 +17,7 @@ export default function Home() {
     <HomeContainer>
       <Navigation />
       <DarkModeToggle />
+      <Main />
     </HomeContainer>
   );
 }
