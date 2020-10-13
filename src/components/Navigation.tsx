@@ -83,7 +83,7 @@ export default function Navigation() {
   return (
     <NavContainer navBar={theme.navBar}>
       <NavContentContainer>
-        <TitleContainer mainColor={theme.mainColor}>ginger</TitleContainer>
+        <TitleContainer mainColor={theme.mainColor}>React</TitleContainer>
         <DarkModeToggle />
         <InfoContainer>
           <LoginButton>로그인</LoginButton>
