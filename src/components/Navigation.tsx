@@ -28,11 +28,15 @@ const NavContentContainer = styled.div`
   transition: all 0.5s ease-in-out;
 `;
 
-const TitleContainer = styled.header`
+interface TitleColorProps {
+  mainColor: string;
+}
+
+const TitleContainer = styled('header')<TitleColorProps>`
   height: 100%;
   font-size: 2rem;
   font-weight: 900;
-  color: #e6328d;
+  color: ${({ mainColor }) => mainColor};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -79,7 +83,7 @@ export default function Navigation() {
   return (
     <NavContainer navBar={theme.navBar}>
       <NavContentContainer>
-        <TitleContainer>ginger</TitleContainer>
+        <TitleContainer mainColor={theme.mainColor}>ginger</TitleContainer>
         <DarkModeToggle />
         <InfoContainer>
           <LoginButton>로그인</LoginButton>
