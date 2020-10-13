@@ -12,6 +12,14 @@
 | typescript         | **^4.0**   |
 | @typescript-eslint | **^4.4**   |
 
+## ✨ Feature
+
+### 🌚 Dark Mode
+
+<div align="center">
+<img width="900" src="https://res.cloudinary.com/dbvq5d4n5/image/upload/v1602617158/darkmode_nfqktd.gif">
+</div>
+
 ## ⚙️ Configuration
 
 ### 🛠 .eslintrc.json
