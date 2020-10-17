@@ -1,22 +1,34 @@
 import React, { ReactElement, useContext } from 'react';
 import styled from 'styled-components';
 import { ThemeContext } from '../App';
-import { lightTheme } from '../theme';
+import { lightTheme, Theme } from '../theme';
 
-const ToggleButton = styled.button`
+interface ToggleProps {
+  theme: Theme;
+}
+
+const ToggleButton = styled('button')<ToggleProps>`
   position: fixed;
   width: 115px;
   height: 45px;
   right: 1.5rem;
   bottom: 1.5rem;
-  border: none;
   border-radius: 30px;
   cursor: pointer;
-  transition: all 0.5s ease-in-out;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
+  background: ${({ theme }) => theme.toggleBackground};
+  color: ${({ theme }) => theme.text};
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+  z-index: 10000;
+
+  &:hover {
+    filter: brightness(
+      ${({ theme }) => (theme === lightTheme ? '0.9' : '1.13')}
+    );
+  }
 `;
 
 const Emoji = styled.figure`
@@ -27,21 +39,18 @@ const Emoji = styled.figure`
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: all 0.5s ease-in-out;
 `;
 
 const ModeContent = styled.p`
   font-size: 0.8rem;
-  color: white;
   margin-left: 5px;
-  transition: all 0.5s ease-in-out;
 `;
 
 export default function DarkModeToggle(): ReactElement {
   const { theme, toggleTheme } = useContext(ThemeContext);
 
   return (
-    <ToggleButton onClick={toggleTheme}>
+    <ToggleButton onClick={toggleTheme} theme={theme}>
       {theme === lightTheme ? (
         <>
           <Emoji>

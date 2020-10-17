@@ -25,10 +25,11 @@ export const GlobalStyle = createGlobalStyle<ThemeInterface>`
         transition: all 0.5s ease-in-out;
     }
     button {
-        background: ${({ theme }) => theme.toggleBackground};
+        background: none;
         cursor: pointer;
         border: none;
         outline: none;
+        transition: all 0.5s ease-in-out;
     }
     ol, ul, li {
         list-style: none;

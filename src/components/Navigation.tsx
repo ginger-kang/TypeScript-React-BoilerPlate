@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import styled from 'styled-components';
 import DarkModeToggle from './DarkModeToggle';
 import { ThemeContext } from '../App';
+import { lightTheme, Theme } from '../theme';
 
 interface NavProps {
   navBar: string;
@@ -9,8 +10,7 @@ interface NavProps {
 
 const NavContainer = styled('nav')<NavProps>`
   width: 100%;
-  height: 10vh;
-  min-height: 70px;
+  height: 63px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -28,15 +28,15 @@ const NavContentContainer = styled.div`
   transition: all 0.5s ease-in-out;
 `;
 
-interface TitleColorProps {
-  mainColor: string;
+interface ColorProps {
+  color: string;
 }
 
-const TitleContainer = styled('header')<TitleColorProps>`
+const TitleContainer = styled('header')<ColorProps>`
   height: 100%;
   font-size: 2rem;
   font-weight: 900;
-  color: ${({ mainColor }) => mainColor};
+  color: ${({ color }) => color};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -52,29 +52,37 @@ const InfoContainer = styled.div`
   transition: all 0.5s ease-in-out;
 `;
 
-const LoginButton = styled.button`
+interface ThemeProps {
+  theme: Theme;
+}
+
+const LoginButton = styled('button')<ThemeProps>`
   width: 90px;
   height: 40px;
-  border: 1px solid rgba(0, 0, 0, 0);
   border-radius: 30px;
   font-size: 14px;
-  color: white;
-  transition: all 0.5s ease-in-out;
+  border: 1px solid #fcfcfc;
+  color: ${({ theme }) => theme.text};
   &:hover {
-    background-color: #ff0081;
+    background: #fcfcfc;
+    color: ${({ theme }) =>
+      theme === lightTheme ? theme.mainColor : theme.body};
+    transition: all 0.1s ease-in-out;
   }
 `;
 
-const RegisterButton = styled.button`
+const RegisterButton = styled('button')<ThemeProps>`
   width: 90px;
   height: 40px;
-  border: 1px solid rgba(0, 0, 0, 0);
   border-radius: 30px;
   font-size: 14px;
-  color: white;
-  transition: all 0.5s ease-in-out;
+  border: 1px solid #fcfcfc;
+  color: ${({ theme }) => theme.text};
   &:hover {
-    background-color: #ff0081;
+    background: #fcfcfc;
+    color: ${({ theme }) =>
+      theme === lightTheme ? theme.mainColor : theme.body};
+    transition: all 0.1s ease-in-out;
   }
 `;
 
@@ -83,11 +91,11 @@ export default function Navigation() {
   return (
     <NavContainer navBar={theme.navBar}>
       <NavContentContainer>
-        <TitleContainer mainColor={theme.mainColor}>React</TitleContainer>
+        <TitleContainer color={theme.mainColor}>React</TitleContainer>
         <DarkModeToggle />
         <InfoContainer>
-          <LoginButton>로그인</LoginButton>
-          <RegisterButton>회원가입</RegisterButton>
+          <LoginButton theme={theme}>로그인</LoginButton>
+          <RegisterButton theme={theme}>회원가입</RegisterButton>
         </InfoContainer>
       </NavContentContainer>
     </NavContainer>
