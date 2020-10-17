@@ -17,7 +17,7 @@
 ### 🌚 Dark Mode
 
 <div align="center">
-<img width="900" src="https://res.cloudinary.com/dbvq5d4n5/image/upload/v1602617158/darkmode_nfqktd.gif">
+<img width="900" src="https://res.cloudinary.com/dbvq5d4n5/image/upload/v1602946200/dark_mode_abdk9l.gif">
 </div>
 
 ## ⚙️ Configuration
